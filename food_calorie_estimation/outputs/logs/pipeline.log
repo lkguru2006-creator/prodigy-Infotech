@@ -1,0 +1,64 @@
+2026-07-02 05:39:39 | INFO     | food_calorie_pipeline | Pipeline run started
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'apple_pie'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'caesar_salad'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'cheesecake'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'chicken_curry'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'french_fries'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'hamburger'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'pizza'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'ramen'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'sushi'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Generated 60 synthetic images for class 'waffles'
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Synthetic dataset generation complete: 10 classes at /home/claude/task05/food_calorie_estimation/data/raw
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Loaded 600 images across 10 classes
+2026-07-02 05:39:40 | INFO     | food_calorie_pipeline | Split dataset: 480 train / 120 test
+2026-07-02 05:39:41 | INFO     | food_calorie_pipeline | Feature extractor fitted on 480 images (1812-dim raw features)
+2026-07-02 05:39:43 | INFO     | food_calorie_pipeline | Model 'sklearn_rf' fitted on 480 samples
+2026-07-02 05:39:43 | INFO     | food_calorie_pipeline | Model saved to /home/claude/task05/food_calorie_estimation/outputs/models/food_classifier.joblib
+2026-07-02 05:39:43 | INFO     | food_calorie_pipeline | Artifacts saved: model, metrics.json, run_summary.json, predictions.csv
+2026-07-02 05:39:43 | INFO     | food_calorie_pipeline | Pipeline run complete in 3.90s | accuracy=1.0000
+2026-07-02 05:39:43 | INFO     | food_calorie_pipeline | Final accuracy: 1.0000 | Final F1 (macro): 1.0000
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Pipeline run started
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping apple_pie: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping caesar_salad: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping cheesecake: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping chicken_curry: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping french_fries: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping hamburger: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping pizza: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping ramen: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping sushi: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Skipping waffles: 60 images already present
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Synthetic dataset generation complete: 10 classes at /home/claude/task05/food_calorie_estimation/data/raw
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Loaded 600 images across 10 classes
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Split dataset: 480 train / 120 test
+2026-07-02 05:39:49 | INFO     | food_calorie_pipeline | Feature extractor fitted on 480 images (1812-dim raw features)
+2026-07-02 05:39:52 | INFO     | food_calorie_pipeline | Model 'sklearn_rf' fitted on 480 samples
+2026-07-02 05:39:52 | INFO     | food_calorie_pipeline | Model saved to /home/claude/task05/food_calorie_estimation/outputs/models/food_classifier.joblib
+2026-07-02 05:39:52 | INFO     | food_calorie_pipeline | Artifacts saved: model, metrics.json, run_summary.json, predictions.csv
+2026-07-02 05:39:52 | INFO     | food_calorie_pipeline | Pipeline run complete in 3.21s | accuracy=1.0000
+2026-07-02 05:39:52 | INFO     | food_calorie_pipeline | Final accuracy: 1.0000 | Final F1 (macro): 1.0000
+2026-07-02 05:40:11 | WARNING  | verify_logger | No calorie entry for class 'not_a_real_class'; using default
+2026-07-02 05:40:11 | INFO     | verify_logger | Feature extractor fitted on 5 images (1812-dim raw features)
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Pipeline run started
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping apple_pie: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping caesar_salad: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping cheesecake: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping chicken_curry: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping french_fries: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping hamburger: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping pizza: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping ramen: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping sushi: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Skipping waffles: 60 images already present
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Synthetic dataset generation complete: 10 classes at /home/claude/task05/food_calorie_estimation/data/raw
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Loaded 600 images across 10 classes
+2026-07-02 05:41:35 | INFO     | food_calorie_pipeline | Split dataset: 480 train / 120 test
+2026-07-02 05:41:36 | INFO     | food_calorie_pipeline | Feature extractor fitted on 480 images (1812-dim raw features)
+2026-07-02 05:41:38 | INFO     | food_calorie_pipeline | Model 'sklearn_rf' fitted on 480 samples
+2026-07-02 05:41:38 | INFO     | food_calorie_pipeline | Model saved to /home/claude/task05/food_calorie_estimation/outputs/models/food_classifier.joblib
+2026-07-02 05:41:38 | INFO     | food_calorie_pipeline | Artifacts saved: model, metrics.json, run_summary.json, predictions.csv
+2026-07-02 05:41:38 | INFO     | food_calorie_pipeline | Pipeline run complete in 3.09s | accuracy=1.0000
+2026-07-02 05:41:38 | INFO     | food_calorie_pipeline | Final accuracy: 1.0000 | Final F1 (macro): 1.0000
+2026-07-02 05:41:40 | WARNING  | verify_logger | No calorie entry for class 'not_a_real_class'; using default
+2026-07-02 05:41:40 | INFO     | verify_logger | Feature extractor fitted on 5 images (1812-dim raw features)

@@ -1,0 +1,69 @@
+project:
+  name: "food-101-calorie-estimator"
+  root: "."  # resolved to absolute path at runtime by config_loader.py
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  image_size: [64, 64]        # (H, W) - kept small for CPU-only training
+  test_split: 0.2
+  random_state: 42
+
+synthetic:
+  enabled: true                # set false once real Food-101 images are placed in data/raw/<class_name>/
+  num_classes: 10               # subset of the 101 Food-101 classes for demo-scale runs
+  images_per_class: 60
+  class_names:
+    - apple_pie
+    - caesar_salad
+    - cheesecake
+    - chicken_curry
+    - french_fries
+    - hamburger
+    - pizza
+    - ramen
+    - sushi
+    - waffles
+
+features:
+  hog:
+    orientations: 9
+    pixels_per_cell: [8, 8]
+    cells_per_block: [2, 2]
+  color_hist_bins: 16
+
+model:
+  backend: "sklearn_rf"        # sklearn_rf | sklearn_mlp (swap to "keras_cnn" if TensorFlow is available in deployment env)
+  random_forest:
+    n_estimators: 200
+    max_depth: 20
+    random_state: 42
+  mlp:
+    hidden_layer_sizes: [256, 128]
+    max_iter: 300
+    random_state: 42
+
+calorie_lookup:
+  # estimated calories per 100g, used as class -> calorie mapping (swap for a regression head if per-image estimation is needed)
+  apple_pie: 237
+  caesar_salad: 190
+  cheesecake: 321
+  chicken_curry: 165
+  french_fries: 312
+  hamburger: 295
+  pizza: 266
+  ramen: 436
+  sushi: 150
+  waffles: 291
+  default: 250
+
+outputs:
+  models_dir: "outputs/models"
+  metrics_dir: "outputs/metrics"
+  logs_dir: "outputs/logs"
+  predictions_dir: "outputs/predictions"
+
+logging:
+  level: "INFO"
+  max_bytes: 1048576
+  backup_count: 3

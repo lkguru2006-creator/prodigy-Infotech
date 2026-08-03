@@ -1,0 +1,9 @@
+{
+  "run_timestamp": "2026-07-02 05:41:38",
+  "duration_seconds": 3.09,
+  "model_backend": "sklearn_rf",
+  "num_classes": 10,
+  "test_samples": 120,
+  "accuracy": 1.0,
+  "f1_macro": 1.0
+}
