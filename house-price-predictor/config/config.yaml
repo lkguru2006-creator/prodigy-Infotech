@@ -1,0 +1,83 @@
+# =============================================================================
+# House Price Predictor - Central Configuration
+# All tunable parameters live here. No magic numbers in code.
+# =============================================================================
+
+project:
+  name: "house-price-predictor"
+  version: "1.0.0"
+  random_seed: 42
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_file: "train.csv"
+  test_file: "test.csv"
+  processed_train_file: "train_processed.csv"
+  processed_test_file: "test_processed.csv"
+  target_column: "SalePrice"
+  id_column: "Id"
+
+  # Synthetic data generation (used only when real Kaggle CSVs are absent)
+  synthetic:
+    enabled: true
+    n_train_samples: 1460
+    n_test_samples: 1459
+
+features:
+  # Core features requested by the task: square footage, bedrooms, bathrooms
+  numeric_features:
+    - "GrLivArea"        # Above-ground living area (sq ft)
+    - "TotalBsmtSF"       # Basement square footage
+    - "BedroomAbvGr"      # Bedrooms above grade
+    - "FullBath"          # Full bathrooms
+    - "HalfBath"          # Half bathrooms
+    - "OverallQual"       # Overall material/finish quality (1-10)
+    - "YearBuilt"         # Year built
+    - "GarageCars"        # Garage capacity (cars)
+
+  engineered_features:
+    - "TotalSF"            # GrLivArea + TotalBsmtSF
+    - "TotalBath"           # FullBath + 0.5 * HalfBath
+    - "HouseAge"            # Reference year - YearBuilt
+
+  reference_year: 2026
+
+  # Outlier handling thresholds (IQR multiplier)
+  outlier_iqr_multiplier: 3.0
+
+  # Missing value strategy: median for numeric features
+  imputation_strategy: "median"
+
+model:
+  type: "linear_regression"
+  test_size: 0.2
+  cross_validation:
+    enabled: true
+    n_splits: 5
+  scale_features: true
+
+  # Persisted artifact names
+  model_filename: "linear_regression_model.joblib"
+  scaler_filename: "feature_scaler.joblib"
+  feature_list_filename: "feature_list.json"
+  metrics_filename: "metrics.json"
+
+evaluation:
+  metrics:
+    - "rmse"
+    - "mae"
+    - "r2"
+    - "mape"
+
+logging:
+  level: "INFO"
+  log_dir: "logs"
+  log_file: "pipeline.log"
+  max_bytes: 5242880   # 5 MB
+  backup_count: 3
+
+paths:
+  artifacts_dir: "artifacts"
+  models_dir: "artifacts/models"
+  reports_dir: "artifacts/reports"
