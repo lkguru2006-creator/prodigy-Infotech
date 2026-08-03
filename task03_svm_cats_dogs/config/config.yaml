@@ -1,0 +1,58 @@
+# =============================================================
+# Task-03: SVM Cats vs Dogs Classifier - Central Configuration
+# =============================================================
+project:
+  name: "svm-cats-vs-dogs"
+  random_seed: 42
+
+paths:
+  data_raw_dir: "data/raw"
+  train_dir: "data/raw/train"
+  test_dir: "data/raw/test1"
+  processed_dir: "data/processed"
+  model_dir: "artifacts/models"
+  metrics_dir: "artifacts/metrics"
+  figures_dir: "artifacts/figures"
+  logs_dir: "artifacts/logs"
+  outputs_dir: "outputs"
+
+synthetic_data:
+  enabled_if_raw_missing: true
+  num_images_per_class: 250
+  image_size: 96          # square synthetic image side length (px)
+  noise_std: 18
+
+image:
+  resize_dim: 64           # images resized to (resize_dim, resize_dim) before feature extraction
+  color_mode: "RGB"
+
+features:
+  hog:
+    orientations: 9
+    pixels_per_cell: [8, 8]
+    cells_per_block: [2, 2]
+    block_norm: "L2-Hys"
+  color_histogram:
+    bins_per_channel: 16
+
+split:
+  test_size: 0.2
+  val_size: 0.1
+  stratify: true
+
+model:
+  kernel: "rbf"
+  C: 5.0
+  gamma: "scale"
+  probability: true
+  grid_search:
+    enabled: false
+    param_grid:
+      C: [0.5, 1, 5, 10]
+      gamma: ["scale", "auto"]
+    cv: 3
+
+logging:
+  level: "INFO"
+  max_bytes: 1048576
+  backup_count: 3

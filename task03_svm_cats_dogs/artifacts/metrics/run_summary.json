@@ -1,0 +1,118 @@
+{
+  "run_id": "20260701T155502Z",
+  "timestamp_utc": "2026-07-01T15:55:05.943709+00:00",
+  "n_train": 350,
+  "n_val": 50,
+  "n_test": 100,
+  "feature_dim": 1812,
+  "validation_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": [
+      [
+        25,
+        0
+      ],
+      [
+        0,
+        25
+      ]
+    ],
+    "n_samples": 50
+  },
+  "test_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": [
+      [
+        50,
+        0
+      ],
+      [
+        0,
+        50
+      ]
+    ],
+    "n_samples": 100
+  },
+  "config_snapshot": {
+    "project": {
+      "name": "svm-cats-vs-dogs",
+      "random_seed": 42
+    },
+    "paths": {
+      "data_raw_dir": "/home/claude/task03_svm_cats_dogs/data/raw",
+      "train_dir": "/home/claude/task03_svm_cats_dogs/data/raw/train",
+      "test_dir": "/home/claude/task03_svm_cats_dogs/data/raw/test1",
+      "processed_dir": "/home/claude/task03_svm_cats_dogs/data/processed",
+      "model_dir": "/home/claude/task03_svm_cats_dogs/artifacts/models",
+      "metrics_dir": "/home/claude/task03_svm_cats_dogs/artifacts/metrics",
+      "figures_dir": "/home/claude/task03_svm_cats_dogs/artifacts/figures",
+      "logs_dir": "/home/claude/task03_svm_cats_dogs/artifacts/logs",
+      "outputs_dir": "/home/claude/task03_svm_cats_dogs/outputs"
+    },
+    "synthetic_data": {
+      "enabled_if_raw_missing": true,
+      "num_images_per_class": 250,
+      "image_size": 96,
+      "noise_std": 18
+    },
+    "image": {
+      "resize_dim": 64,
+      "color_mode": "RGB"
+    },
+    "features": {
+      "hog": {
+        "orientations": 9,
+        "pixels_per_cell": [
+          8,
+          8
+        ],
+        "cells_per_block": [
+          2,
+          2
+        ],
+        "block_norm": "L2-Hys"
+      },
+      "color_histogram": {
+        "bins_per_channel": 16
+      }
+    },
+    "split": {
+      "test_size": 0.2,
+      "val_size": 0.1,
+      "stratify": true
+    },
+    "model": {
+      "kernel": "rbf",
+      "C": 5.0,
+      "gamma": "scale",
+      "probability": true,
+      "grid_search": {
+        "enabled": false,
+        "param_grid": {
+          "C": [
+            0.5,
+            1,
+            5,
+            10
+          ],
+          "gamma": [
+            "scale",
+            "auto"
+          ]
+        },
+        "cv": 3
+      }
+    },
+    "logging": {
+      "level": "INFO",
+      "max_bytes": 1048576,
+      "backup_count": 3
+    }
+  }
+}
