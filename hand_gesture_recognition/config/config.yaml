@@ -1,0 +1,58 @@
+# =============================================================
+# Hand Gesture Recognition - Central Configuration
+# Dataset reference: https://www.kaggle.com/gti-upm/leapgestrecog
+# =============================================================
+
+project:
+  name: "hand-gesture-recognition"
+  seed: 42
+
+data:
+  raw_dir: "data/raw/leapGestRecog"
+  processed_dir: "data/processed"
+  image_size: [64, 64]
+  grayscale: true
+  classes:
+    - "01_palm"
+    - "02_l"
+    - "03_fist"
+    - "04_fist_moved"
+    - "05_thumb"
+    - "06_index"
+    - "07_ok"
+    - "08_palm_moved"
+    - "09_c"
+    - "10_down"
+  num_subjects: 10          # subject folders 00-09, matches real dataset
+  images_per_class_per_subject: 20   # used only by synthetic generator
+  val_split: 0.15
+  test_split: 0.15
+
+synthetic:
+  enabled: true             # set false once real Kaggle CSV/images are placed in data.raw_dir
+  noise_std: 12.0
+
+model:
+  architecture: "gesture_cnn"
+  in_channels: 1
+  num_classes: 10
+  dropout: 0.3
+
+training:
+  batch_size: 32
+  epochs: 8
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 4
+  lr_scheduler_patience: 2
+  device: "auto"             # auto | cpu | cuda
+
+paths:
+  checkpoint_dir: "artifacts/models"
+  log_dir: "artifacts/logs"
+  report_dir: "artifacts/reports"
+  best_model_name: "gesture_cnn_best.pt"
+
+logging:
+  level: "INFO"
+  log_to_file: true
