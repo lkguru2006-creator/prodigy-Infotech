@@ -1,7 +1,17 @@
 Prodigy Infotech — Machine Learning Internship Projects
+
+
 This repository contains five end-to-end machine learning projects completed for the Prodigy Infotech Machine Learning internship. Each project follows a consistent, enterprise-grade engineering standard, including layered architecture, centralized YAML configuration, structured logging, custom exception hierarchies, and strict separation between training and inference data to prevent leakage.
+
+
 Task 1, House Price Prediction, uses linear regression to estimate house sale prices based on features such as square footage, number of bedrooms, and number of bathrooms. The pipeline includes 5-fold cross-validation, missing-value imputation, and outlier handling, and produces a Kaggle-format submission file.
+
+
 Task 2, Customer Segmentation, applies K-means clustering to group retail customers by purchasing behavior. Cluster quality is evaluated using silhouette score and Davies-Bouldin index, with 2D and 3D visualizations of the resulting segments.
 Task 3, Cats vs. Dogs Classifier, is a binary image classification system built with a Support Vector Machine trained on HOG and color histogram features. It includes a synthetic image generator as a fallback for environments without the Kaggle dataset, along with full test coverage.
+
+
 Task 4, Hand Gesture Recognition, uses a convolutional neural network built in PyTorch to classify hand gestures from image frames. The pipeline includes early stopping and model checkpointing during training.
+
+
 Task 5, Food Recognition and Calorie Estimation, recognizes food items from images and estimates their calorie content using HOG and color histogram features with scikit-learn classifiers. Its architecture uses an abstract classifier interface, allowing a deep learning backend to be substituted later without changes to the rest of the pipeline.
